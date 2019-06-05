@@ -1,9 +1,7 @@
 # th\_encode\_erase
 
-Clear ref\_frame\_bufs of [theora-1.1](https://github.com/xiph/theora/tree/theora-1.1)
-
-    #import "th_dec_ctx.h"
-    
+    #import "1.1/th_dec_ctx.h"
+        
     void th_encode_erase(th_dec_ctx *tcx) {
             
         int fw = tcx->state.info.frame_width;
