@@ -13,6 +13,13 @@
             
         int fw = tcx->state.info.frame_width;
         int fh = tcx->state.info.frame_height;
+	
+	/*
+	OC_FRAME_GOLD (0)
+	OC_FRAME_PREV (1)
+	OC_FRAME_SELF (2)
+	OC_FRAME_IO (3)
+	*/
             
         for(int k=0; k<2; k++) {
             
