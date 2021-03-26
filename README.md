@@ -1,7 +1,14 @@
 # th\_encode\_erase
 
     #import "1.1/th_dec_ctx.h"
-        
+    
+    #define CLIP(X) ((X)>0xFF?0xFF:(X)<0?0:X)
+
+    // RGB -> YUV
+    #define RGB2Y(R,G,B) CLIP((( 66*(R)+129*(G)+ 25*(B)+128)>>8)+ 16)
+    #define RGB2U(R,G,B) CLIP(((-38*(R)- 74*(G)+112*(B)+128)>>8)+128)
+    #define RGB2V(R,G,B) CLIP(((112*(R)- 94*(G)- 18*(B)+128)>>8)+128)
+
     void th_encode_erase(th_dec_ctx *tcx) {
             
         int fw = tcx->state.info.frame_width;
@@ -29,9 +36,9 @@
                     
                     for(int j=0; j<fw; j++) {
                         
-                        *y=0x80;
-                        *u=0x80;
-                        *v=0x80;
+                        *y=RGB2Y(0,0,0xFF);
+                        *u=RGB2Y(0,0,0xFF);
+                        *v=RGB2Y(0,0,0xFF);
                         
                         dc=(y-y_row&1)|(tcx->state.info.pixel_fmt&1);
                         
