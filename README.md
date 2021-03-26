@@ -7,7 +7,7 @@
         int fw = tcx->state.info.frame_width;
         int fh = tcx->state.info.frame_height;
             
-        for(int k=0; k<4; k++) {
+        for(int k=0; k<2; k++) {
             
             int framei = tcx->state.ref_frame_idx[k];
             if(tcx->state.ref_frame_bufs[framei][0].width==fw&&tcx->state.ref_frame_bufs[framei][0].height==fh) {
