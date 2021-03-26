@@ -44,8 +44,8 @@
                     for(int j=0; j<fw; j++) {
                         
                         *y=RGB2Y(0,0,0xFF);
-                        *u=RGB2Y(0,0,0xFF);
-                        *v=RGB2Y(0,0,0xFF);
+                        *u=RGB2U(0,0,0xFF);
+                        *v=RGB2V(0,0,0xFF);
                         
                         dc=(y-y_row&1)|(tcx->state.info.pixel_fmt&1);
                         
